@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<!--
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Firebase Aunthentication</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+<form id="mainForm" class="w-25 m-4">
+                        <h1>Register Page</h1>
+
+        <div class="form-floating-mb-3">
+            <input type="email" class="form-control" id="emailInp" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+
+        <div class="form-floating-mb-3">
+            <input type="password" class="form-control" id="passwordInp" placeholder="Password">
+            <label for="passwordInp">Password</label>
+        </div>
+
+        <div class="form-floating-mb-3">
+            <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" required>
+            <label for="firstName">First Name: </label>
+        </div>
+
+        <div class="form-floating-mb-3">
+            <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" required>
+            <label for="lastName">Enter Last Name: </label>
+        </div>
+
+        <button type="submit" id="btn-createAccount" style="float: right;">Create New User</button>
+        <a href="login.html"><button type="button" id="btn-signIn" style="float: center;">Sign In</button></a>
+
+</form>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<script type="module">
+
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+  import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAHJkEw2Qn1ZeggGqm77BX4feeh6DGMWJ8",
+    authDomain: "hamadhformregistration.firebaseapp.com",
+    projectId: "hamadhformregistration",
+    storageBucket: "hamadhformregistration.appspot.com",
+    messagingSenderId: "779688284351",
+    appId: "1:779688284351:web:17e52a0c229e61ba5eb60a",
+    measurementId: "G-93GWKRCG07"
+  };
+
+  // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getDatabase();
+    const auth = getAuth(app);
+
+        let email = document.getElementById('emailInp');
+        let password = document.getElementById('passwordInp');
+        let firstName = document.getElementById('firstname');
+        let lastName = document.getElementById('lastname');
+        let form = document.getElementById('mainForm');
+
+        
+  
+        let RegisterUser = evt => 
+    {
+        evt.preventDefault();
+        
+        createUserWithEmailAndPassword(auth, email.value, password.value)
+        .then((credentials) => 
+    {
+        set(ref(db, 'UsersAuthList' + credentials.user.uid),
+         {
+
+            firstname: firstname.value,
+            lastname: lastname.value    
+        })
+    })
+
+    .catch((error) =>
+{
+    /* alert(error.message);
+    console.log(error.code);
+    console.log(error.message); */
+    
+    console.log('There was an error');
+})
+
+    }
+
+    mainForm.addEventListener('submit', RegisterUser);
+
+</script> -->
+      
+</body>
+
+</html> 
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REGISTRATION</title>
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+    <h1 id="mainHeading">MATHARI HOSPITAL PAYROLL SYSTEM</h1>
+
+<form id="mainForm" class="register">
+
+                 <center><h2>Create Account</h2></center> 
+
+    <div class="form-floating mb-3">
+        <label for="emailInp">Email address: </label>
+        <input type="email" class="form-control" id="emailInp" placeholder="muhammad@gmail.com">
+    </div>
+
+    <div class="form-floating mb-3">
+        <label for="passwordInp">Password: </label>
+        <input type="password" class="form-control" id="passwordInp" placeholder="Enter Password">
+    </div>
+
+    <div class="form-floating mb-3">
+        <label for="passwordInpConfirm">Confirm Password: </label>
+        <input type="password" class="form-control" id="passwordInpConfirm" placeholder="Confirm Password">
+    </div>
+
+    <div class="form-floating mb-3">
+        <label for="firstName">First Name: </label>
+        <input type="text" class="form-control" id="firstName" placeholder="Enter First Name" required>
+    </div>
+
+    <div class="form-floating mb-3">
+        <label for="lastName">Enter Last Name: </label>
+        <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" required>
+    </div>
+
+    <div class="form-floating mb-3">
+        <label>Employee Number: </label>
+        <input type="text" id="employeeNo" placeholder="Enter Employee No" required />
+    </div>
+
+    <button type="submit" id="btn-createAccount">Create Account</button><center><bold>or</bold></center>
+    <a href="login.html"><button type="button" id="btn-signIn">Sign In</button></a>
+
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyAHJkEw2Qn1ZeggGqm77BX4feeh6DGMWJ8",
+        authDomain: "hamadhformregistration.firebaseapp.com",
+        projectId: "hamadhformregistration",
+        storageBucket: "hamadhformregistration.appspot.com",
+        messagingSenderId: "779688284351",
+        appId: "1:779688284351:web:17e52a0c229e61ba5eb60a",
+        measurementId: "G-93GWKRCG07"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getDatabase(app);
+    const auth = getAuth(app);
+
+    const email = document.getElementById('emailInp');
+    const password = document.getElementById('passwordInp');
+    const firstName = document.getElementById('firstName');
+    const lastName = document.getElementById('lastName');
+    const form = document.getElementById('mainForm');
+
+    const RegisterUser = (evt) => {
+        evt.preventDefault();
+        
+        createUserWithEmailAndPassword(auth, email.value, password.value)
+        .then((credentials) => {
+            set(ref(db, 'UsersAuthList/' + credentials.user.uid), {
+                firstname: firstName.value,
+                lastname: lastName.value    
+            });
+        })
+        .catch((error) => {
+            alert(error.message);
+            console.log('Error code:', error.code);
+            console.log('Error message:', error.message);
+        });
+    };
+
+    form.addEventListener('submit', RegisterUser);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* The body is the Whole Page, the document*/
+body
+{
+    background-color: dimgray;
+    display: flex;
+}
+
+#payroll_form
+{
+    padding: 20px;
+    margin-right: 90px;
+    float: left;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: black;
+    width: 40%;
+    Margin-top: 50px;
+    color: white;
+}   
+
+/* The Element:hover attribute is used for hovering effects of the mouse. keyTerm = 'hover'  */
+#payroll_form:hover
+{
+    background-color: darkgrey;
+}
+
+/* Css style on padding and the border 
+
+    span tag in css
+
+    the hover function/Method
+
+    float function
+
+*/
+
+h1 
+{
+    color: white;
+    font-family: 'Segoe UI';
+}
+
+h1:hover
+{
+    color: darkblue;
+}
+
+p
+{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS';
+}
+
+span 
+{
+    float: right;
+    margin-right: 55px;
+}
+
+input
+{
+    font-weight: bold;
+    font-size: 14px;
+    font-family: 'Segoe UI';
+    border-radius: 3px;
+    border: 2px solid black;
+}
+
+button 
+{
+    font-size: 21px;
+    font-weight: bold;
+    font-family: 'Segoe UI';
+    background-color: darkblue;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+button:hover
+{
+    background-color: grey;
+}
+
+#mainHeading 
+{
+    padding: 90px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Payroll.css">
+    <title>SIMPLE PAYROLL</title>
+</head>
+
+<body>
+
+    <h1 id="mainHeading">MATHARI HOSPITAL PAYROLL</h1>
+
+    <div id="payroll_form">
+
+        <center><h1>MOHAMMED'S PAYROLL</h1></center>
+ 
+        <p>Employee Name: <span><input type="text" id="name" placeholder="Enter your name" required></span></p>
+
+
+        <!-- You need to research on the onblur="" Method -->
+
+        <p>Enter Basic Salary: <span><input type="text" id="bs" onblur="sal()" placeholder="Enter Basic Salary" required></span> </p>
+        <p>Housing Allowance: <span><input type="text" id="ha" placeholder="*******" readonly></span></p>
+        <p>Transport Allowance: <span><input type="text" id="ta" placeholder="*******" readonly></span></p>
+        <p>Hazard Allowance: <span><input type="text" id="hza" placeholder="*******" readonly></span></p>
+        <p>Tax: <span><input type="text" id="tax" placeholder="*******" readonly></span></p>
+        
+        <!-- The <span> tag plays a very big part. Need to research on it-->
+            <!--The readonly method-->
+            <!--Putting a function in inside a TEXT INPUT-->
+        
+            <p>Net Pay: <span><input type="text" id="np" placeholder="*******" readonly></span></p>
+            <p>Gross Pay: <span><input type="text" id="gp" placeholder="******" readonly></span></p>
+            
+            <center><button onclick="prt()">Print</button></center>
+
+    </div> 
+    
+<script  type="text/javascript" src="Payroll.js"></script>
+</body>
+
+</html>

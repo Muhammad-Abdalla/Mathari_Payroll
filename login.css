@@ -1,0 +1,90 @@
+body
+{
+    background-image: url('pexels-ir-solyanaya-197121-634548.jpg');
+    display: flex;
+    color: white;
+    background-position: 90%;
+
+}
+
+.login
+{
+
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 450px;
+    margin-top: 100px;
+    height: 250px;
+    background-image: url('tony-litvyak-ojLGuwkkbSI-unsplash.jpg');
+    color: white;
+    position: absolute;
+    background-position: 6%;
+}
+
+label
+{
+    font-size: 20px;
+    position: absolute;
+}
+
+label:hover
+{
+    font-size: 21px;
+    color: burlywood;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+input
+{
+    margin-top: 5px;
+    margin-left: 150px;
+    padding: 7px;
+    border-radius: 8px;
+}
+
+input:hover
+{
+    font-size: 15px;
+}
+
+button 
+{
+    font-weight: bold;
+    font-size: 15px;
+    font-family:'Courier New', Courier, monospace;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: 50px;
+    float: right;
+    
+}
+
+button:hover
+{
+    color: burlywood;
+    font-size: 20px;
+}
+
+h1
+{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+h1:hover
+{
+    color: burlywood;
+}
+
+a
+{
+    float: left;
+}
+
+#labelor
+{
+    font-size: 15px;
+    margin-top: 50px;
+    margin-left: 33px;
+}
